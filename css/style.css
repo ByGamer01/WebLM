@@ -1,0 +1,758 @@
+/* ============================================================
+   FORZA — Hoja de estilos principal
+   Estilos generales, cabecera, secciones, productos, carrito,
+   formulario de login y diseño responsive.
+   ============================================================ */
+
+@font-face {
+    font-family: 'SongOfValentine';
+    src: url('../fonts/songOfValentine.woff2') format('woff2'),
+         url('../fonts/songOfValentine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f5f5f5;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* ============================================================
+   CABECERA
+   ============================================================ */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: #222;
+    color: #fff;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.4rem;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    color: #e63946;
+    line-height: 1;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: color 0.15s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #fff;
+}
+
+/* Bloque de la derecha de la cabecera */
+.sesion {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Selector de idiomas */
+.idiomas {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-idioma {
+    background: transparent;
+    color: #aaa;
+    border: 1px solid #444;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-idioma.activo,
+.btn-idioma:hover {
+    background: #e63946;
+    color: #fff;
+    border-color: #e63946;
+}
+
+/* Icono de la cistella siempre visible */
+.icono-carrito {
+    position: relative;
+    font-size: 1.3rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 4px 6px;
+}
+
+.icono-carrito .contador {
+    position: absolute;
+    top: -2px;
+    right: -6px;
+    background: #e63946;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    font-weight: bold;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Zona del usuario (login o saludo) */
+.zona-usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icono-login {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.saludo {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.btn-logout {
+    background: #e63946;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-logout:hover {
+    background: #c5303c;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+    text-align: center;
+    padding: 80px 32px;
+    background: #333;
+    color: #fff;
+}
+
+.hero h1 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 3.2rem;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    margin-bottom: 24px;
+    color: #ccc;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #e63946;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #c5303c;
+}
+
+.btn:disabled {
+    background: #888;
+    cursor: not-allowed;
+}
+
+.btn-pequeno {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+}
+
+/* ============================================================
+   SECCIÓN DE ENTRENAMIENTOS (HOME Y LISTADO)
+   ============================================================ */
+.entrenamientos,
+.listado {
+    padding: 48px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.entrenamientos h2,
+.listado h1 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.4rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 24px;
+}
+
+/* Filtros del listado */
+.filtros {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filtros label {
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-weight: bold;
+    color: #444;
+}
+
+.filtros input,
+.filtros select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    font-family: inherit;
+    min-width: 220px;
+    font-weight: normal;
+}
+
+/* ============================================================
+   GRID DE TARJETAS
+   ============================================================ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.card-img {
+    height: 150px;
+}
+
+/* Imágenes de cada tipo de entrenamiento (sólidas para que el
+   proyecto funcione sin descargar imágenes externas) */
+.img-fuerza    { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+.img-cardio    { background: linear-gradient(135deg, #6b0000, #b22222); }
+.img-flex      { background: linear-gradient(135deg, #006b00, #2e8b57); }
+.img-hiit      { background: linear-gradient(135deg, #6b006b, #b03cb0); }
+.img-funcional { background: linear-gradient(135deg, #003366, #336699); }
+.img-yoga      { background: linear-gradient(135deg, #8a4baf, #c690e0); }
+
+.card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    background: #eee;
+    color: #444;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+.card-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.card-body p {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.precio {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #e63946;
+    margin-bottom: 12px;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.enlace-detalle {
+    color: #e63946;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.enlace-detalle:hover {
+    text-decoration: underline;
+}
+
+.aviso-vacio {
+    color: #888;
+    font-style: italic;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* ============================================================
+   PÁGINA DE PRODUCTO (DETALLE)
+   ============================================================ */
+.producto {
+    padding: 48px 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.volver {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #e63946;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.producto-layout {
+    display: flex;
+    gap: 32px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 24px;
+}
+
+.producto-img {
+    width: 360px;
+    height: 360px;
+    flex-shrink: 0;
+}
+
+.producto-info {
+    flex: 1;
+}
+
+.producto-info h1 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin: 8px 0 12px;
+}
+
+.producto-info p {
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.precio-grande {
+    font-size: 1.6rem;
+    color: #e63946;
+    font-weight: bold;
+    margin: 16px 0 !important;
+}
+
+.lista-detalles {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 24px;
+    border-top: 1px solid #eee;
+}
+
+.lista-detalles li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* ============================================================
+   SOBRE NOSOTROS
+   ============================================================ */
+.sobre {
+    padding: 48px 32px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre h1 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+}
+
+.bloque-sobre {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.bloque-sobre h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #e63946;
+}
+
+.bloque-sobre p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.valores {
+    margin-top: 24px;
+    padding-left: 20px;
+    color: #444;
+}
+
+.valores li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+.contacto {
+    padding: 80px 32px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto h1 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+}
+
+.contacto p {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.contacto a {
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* ============================================================
+   CISTELLA / CARRITO
+   ============================================================ */
+.cistella {
+    padding: 48px 32px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cistella h1 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+}
+
+.lista-cistella {
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fila-cistella {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    gap: 16px;
+}
+
+.fila-img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.fila-datos {
+    flex: 1;
+}
+
+.fila-datos h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.fila-datos .precio {
+    margin-top: 6px;
+    font-size: 0.95rem;
+}
+
+.btn-eliminar {
+    background: #fff;
+    border: 1px solid #e63946;
+    color: #e63946;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-eliminar:hover {
+    background: #e63946;
+    color: #fff;
+}
+
+.total {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 16px 0 24px;
+    color: #222;
+}
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+.login {
+    max-width: 420px;
+    margin: 48px auto;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.login h1 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.2rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.campo-password {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+}
+
+.btn-ojo {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0 12px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-ojo:hover {
+    background: #f0f0f0;
+}
+
+.ayuda {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.error {
+    color: #a94442;
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin-bottom: 12px;
+}
+
+.login .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    background: #222;
+    color: #888;
+    padding: 24px 32px;
+    margin-top: 48px;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+.footer-contenido strong {
+    color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .sesion {
+        justify-content: center;
+    }
+
+    .producto-layout {
+        flex-direction: column;
+    }
+
+    .producto-img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .entrenamientos,
+    .listado,
+    .producto,
+    .sobre,
+    .cistella,
+    .contacto {
+        padding: 32px 16px;
+    }
+
+    .filtros input,
+    .filtros select {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .filtros label {
+        flex: 1 1 100%;
+    }
+
+    .fila-cistella {
+        flex-wrap: wrap;
+    }
+
+    .fila-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .login {
+        margin: 24px 16px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .acciones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acciones .btn {
+        width: 100%;
+    }
+}

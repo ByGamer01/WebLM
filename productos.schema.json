@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Catálogo de productos",
+    "type": "object",
+    "properties": {
+        "productos": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id":          { "type": "integer" },
+                    "foto":        { "type": "string"  },
+                    "nombre":      { "type": "string"  },
+                    "descripcion": { "type": "string"  },
+                    "categoria":   { "type": "string"  },
+                    "nivel":       { "type": "string"  },
+                    "duracion":    { "type": "string"  },
+                    "precio":      { "type": "number"  }
+                },
+                "required": ["id", "foto", "nombre", "descripcion", "categoria"]
+            },
+            "minItems": 1
+        }
+    },
+    "required": ["productos"]
+}

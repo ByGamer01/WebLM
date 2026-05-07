@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="productos.xsd">
+
+    <producto>
+        <id>1</id>
+        <foto>img/entrenamiento-fuerza.jpg</foto>
+        <nombre>Entrenamiento de Fuerza</nombre>
+        <descripcion>Ejercicios de levantamiento de pesas para aumentar la masa muscular de forma progresiva y segura.</descripcion>
+        <categoria>Fuerza</categoria>
+        <nivel>Intermedio</nivel>
+        <duracion>60 min</duracion>
+        <precio>39.99</precio>
+    </producto>
+
+    <producto>
+        <id>2</id>
+        <foto>img/entrenamiento-cardio.jpg</foto>
+        <nombre>Entrenamiento Cardiovascular</nombre>
+        <descripcion>Ejercicios de cardio para mejorar la resistencia y la salud del corazón.</descripcion>
+        <categoria>Cardio</categoria>
+        <nivel>Principiante</nivel>
+        <duracion>45 min</duracion>
+        <precio>24.99</precio>
+    </producto>
+
+    <producto>
+        <id>3</id>
+        <foto>img/entrenamiento-flex.jpg</foto>
+        <nombre>Entrenamiento de Flexibilidad</nombre>
+        <descripcion>Ejercicios de estiramiento para mejorar la flexibilidad y prevenir lesiones.</descripcion>
+        <categoria>Flexibilidad</categoria>
+        <nivel>Avanzado</nivel>
+        <duracion>30 min</duracion>
+        <precio>19.99</precio>
+    </producto>
+
+    <producto>
+        <id>4</id>
+        <foto>img/entrenamiento-hiit.jpg</foto>
+        <nombre>Entrenamiento HIIT</nombre>
+        <descripcion>Alta intensidad con periodos de descanso cortos para quemar grasa y mejorar la resistencia.</descripcion>
+        <categoria>HIIT</categoria>
+        <nivel>Intermedio</nivel>
+        <duracion>20 min</duracion>
+        <precio>29.99</precio>
+    </producto>
+
+    <producto>
+        <id>5</id>
+        <foto>img/entrenamiento-funcional.jpg</foto>
+        <nombre>Entrenamiento Funcional</nombre>
+        <descripcion>Movimientos naturales que mejoran la coordinación y la fuerza para el día a día.</descripcion>
+        <categoria>Funcional</categoria>
+        <nivel>Principiante</nivel>
+        <duracion>40 min</duracion>
+        <precio>27.99</precio>
+    </producto>
+
+    <producto>
+        <id>6</id>
+        <foto>img/entrenamiento-yoga.jpg</foto>
+        <nombre>Entrenamiento de Yoga</nombre>
+        <descripcion>Sesiones de yoga para mejorar la postura, la respiración y reducir el estrés.</descripcion>
+        <categoria>Flexibilidad</categoria>
+        <nivel>Principiante</nivel>
+        <duracion>50 min</duracion>
+        <precio>22.99</precio>
+    </producto>
+
+</productos>

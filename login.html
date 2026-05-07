@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acceso de usuarios registrados de FORZA.">
+    <title>Iniciar Sesión — FORZA</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">FORZA</a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="entrenamientos.html">Entrenamientos</a>
+            <a href="sobre-nosotros.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="sesion" id="sesion"></div>
+    </header>
+
+    <main>
+        <section class="login">
+            <h1>Iniciar Sesión</h1>
+
+            <form id="login-form" novalidate>
+                <div class="campo">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" autocomplete="username">
+                </div>
+
+                <div class="campo">
+                    <label for="password">Contraseña</label>
+                    <div class="campo-password">
+                        <input type="password" id="password" name="password" autocomplete="current-password">
+                        <button type="button" id="toggle-password" class="btn-ojo" title="Mostrar/ocultar contraseña">👁</button>
+                    </div>
+                    <small class="ayuda">
+                        Entre 6 y 12 caracteres, con al menos una mayúscula,
+                        una minúscula y un número.
+                    </small>
+                </div>
+
+                <p class="error" id="error-msg"></p>
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contenido">
+            <p><strong>FORZA</strong> — Centro de Entrenamiento Personal</p>
+            <p>Carrer de l'Esport 12, 07001 Palma · info@forza.example</p>
+            <p>&copy; 2026 FORZA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/carrito.js"></script>
+    <script src="scripts/sesion.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/no-encontrado.js"></script>
+</body>
+</html>

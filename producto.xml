@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<producto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="producto.xsd">
+    <foto>img/entrenamiento-fuerza.jpg</foto>
+    <nombre>Entrenamiento de Fuerza</nombre>
+    <descripcion>Ejercicios de levantamiento de pesas diseñados para aumentar la masa muscular de forma progresiva y segura. Combina movimientos compuestos y aislados para trabajar todos los grupos musculares principales.</descripcion>
+    <categoria>Entrenamiento</categoria>
+    <precio>49.99</precio>
+</producto>

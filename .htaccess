@@ -1,0 +1,3 @@
+# Si el servidor es Apache, cualquier URL que no exista
+# redirige automáticamente a la página 404.html del proyecto.
+ErrorDocument 404 /404.html
