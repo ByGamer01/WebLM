@@ -592,6 +592,7 @@ nav a.active {
     padding: 32px;
     background: #fff;
     border: 1px solid #ddd;
+    border-radius: 0.5em;
 }
 
 .login h1 {
@@ -601,6 +602,36 @@ nav a.active {
     letter-spacing: 0.03em;
     margin-bottom: 20px;
     text-align: center;
+}
+
+/* Avatar yeti animado */
+.login .svgContainer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: none;
+    border: solid 2.5px #3A5E77;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.login .svgContainer > div {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+
+.login .svgContainer .mySVG {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .campo {
