@@ -173,6 +173,9 @@ Click derecho sobre `index.html` → *Open with Live Server*.
 - Botón ojo (`👁 / 🙈`) para mostrar/ocultar la contraseña.
 - Validación en vivo mientras se escribe + validación final al enviar.
 - Al éxito guarda `usuario` en `sessionStorage` y vuelve a `index.html`.
+- Avatar yeti animado encima del formulario (sigue al cursor al escribir
+  el usuario y se tapa los ojos al enfocar la contraseña). Animación
+  adaptada de [https://codepen.io/m3eu/pen/VwYBbwO](https://codepen.io/m3eu/pen/VwYBbwO).
 
 ### `carrito.html` — Cistella
 - Lista los productos cuyo id está en `localStorage`.

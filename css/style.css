@@ -292,14 +292,22 @@ nav a.active {
     height: 150px;
 }
 
-/* Imágenes de cada tipo de entrenamiento (sólidas para que el
-   proyecto funcione sin descargar imágenes externas) */
-.img-fuerza    { background: linear-gradient(135deg, #1a1a2e, #16213e); }
-.img-cardio    { background: linear-gradient(135deg, #6b0000, #b22222); }
-.img-flex      { background: linear-gradient(135deg, #006b00, #2e8b57); }
-.img-hiit      { background: linear-gradient(135deg, #6b006b, #b03cb0); }
-.img-funcional { background: linear-gradient(135deg, #003366, #336699); }
-.img-yoga      { background: linear-gradient(135deg, #8a4baf, #c690e0); }
+.img-fuerza,
+.img-cardio,
+.img-flex,
+.img-hiit,
+.img-funcional,
+.img-yoga {
+    background-size: cover;
+    background-position: center;
+}
+
+.img-fuerza    { background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=300&fit=crop&auto=format'); }
+.img-cardio    { background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop&auto=format'); }
+.img-flex      { background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&h=300&fit=crop&auto=format'); }
+.img-hiit      { background-image: url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=500&h=300&fit=crop&auto=format'); }
+.img-funcional { background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=300&fit=crop&auto=format'); }
+.img-yoga      { background-image: url('https://images.unsplash.com/photo-1544033527-b192daee1f5b?w=500&h=300&fit=crop&auto=format'); }
 
 .card-body {
     padding: 16px;
@@ -713,6 +721,123 @@ footer {
 }
 
 /* ============================================================
+   GALERÍA SLIDER (index.html)
+   ============================================================ */
+.galeria-slider {
+    background: #1e1e1e;
+    padding: 56px 0 48px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.galeria-slider h2 {
+    font-family: 'SongOfValentine', Arial, sans-serif;
+    font-size: 2.4rem;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.galeria-slider .slider-subtitulo {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
+
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.slider-track {
+    display: flex;
+    height: 320px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    flex: 1;
+    padding: 0 12px;
+    gap: 0;
+}
+
+.slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-track .slide {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.slider-track .slide img {
+    height: 100%;
+    width: 260px;
+    margin: 0 8px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: block;
+}
+
+.slider-track .slide img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.slider-track .slide img.zoomed {
+    position: fixed;
+    width: min(520px, 90vw);
+    height: auto;
+    max-height: 85vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1001;
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+    cursor: zoom-out;
+}
+
+.slider-btn {
+    flex-shrink: 0;
+    background: #e63946;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.15s;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.slider-btn:hover {
+    background: #c5303c;
+}
+
+.slider-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.slider-overlay.active {
+    display: block;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
@@ -774,6 +899,25 @@ footer {
     .login {
         margin: 24px 16px;
         padding: 20px;
+    }
+
+    .galeria-slider h2 {
+        font-size: 1.9rem;
+    }
+
+    .slider-track {
+        height: 240px;
+    }
+
+    .slider-track .slide img {
+        width: 200px;
+    }
+
+    .slider-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        margin: 0 6px;
     }
 }
 
