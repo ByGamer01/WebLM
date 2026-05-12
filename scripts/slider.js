@@ -1,4 +1,4 @@
-const SLIDER_STEP = 280;
+var SLIDER_STEP = 280;
 
 function sliderPrev() {
     document.getElementById('slider-container').scrollLeft -= SLIDER_STEP;
@@ -9,11 +9,11 @@ function sliderNext() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const overlay = document.getElementById('sliderOverlay');
+    var overlay = document.getElementById('sliderOverlay');
 
     document.querySelectorAll('.slider-track .slide img').forEach(function (img) {
         img.addEventListener('click', function () {
-            const isZoomed = img.classList.contains('zoomed');
+            var isZoomed = img.classList.contains('zoomed');
             document.querySelectorAll('.slider-track .slide img.zoomed').forEach(function (z) {
                 z.classList.remove('zoomed');
             });
