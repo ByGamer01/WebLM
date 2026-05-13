@@ -27,7 +27,7 @@ nav a:hover, nav a.active { color: #fff; }
 .btn-logout { background: #e63946; color: #fff; border: none; padding: 6px 12px; font-size: 0.8rem; cursor: pointer; font-weight: bold; }
 .btn-logout:hover { background: #c5303c; }
 
-.hero { text-align: center; padding: 80px 32px; background: #072a3e; color: #fff; }
+.hero { text-align: center; padding: 80px 32px; background: #09334f; color: #fff; }
 .hero h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 3.2rem; font-weight: normal; letter-spacing: 0.04em; margin-bottom: 12px; }
 .hero p { margin-bottom: 24px; color: #ccc; }
 
