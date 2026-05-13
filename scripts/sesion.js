@@ -1,7 +1,7 @@
 /* ============================================================
    GESTIÓN DE SESIÓN Y CABECERA
    Construye la parte derecha de la cabecera con el selector de
-   idioma, el icono de la cistella y los enlaces de inicio o
+   idioma, el icono del carrito y los enlaces de inicio o
    cierre de sesión, dependiendo de si hay un usuario activo.
    ============================================================ */
 
@@ -49,7 +49,7 @@ function construirCabecera() {
     var enlaceCarrito = document.createElement("a");
     enlaceCarrito.href = "carrito.html";
     enlaceCarrito.className = "icono-carrito";
-    enlaceCarrito.title = "Ver cistella";
+    enlaceCarrito.title = "Ver carrito";
     var iconoCarro = document.createTextNode("🛒");
     enlaceCarrito.appendChild(iconoCarro);
     var contador = document.createElement("span");
