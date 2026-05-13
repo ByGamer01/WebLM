@@ -1,21 +1,19 @@
 # FORZA — Web de Entrenamiento Personal
 
 Práctica final de la asignatura. Web completa, semántica y responsive, hecha
-**solo con HTML, CSS y JavaScript vainilla** (sin librerías ni frameworks).
-Toda la lógica, los nombres de funciones y los comentarios están en español.
+**solo con HTML, CSS y JavaScript vainilla**
 
 ---
 
 ## Índice
 
 1. [Descripción del proyecto](#descripción-del-proyecto)
-2. [Cumplimiento del enunciado](#cumplimiento-del-enunciado)
-3. [Estructura de carpetas](#estructura-de-carpetas)
-4. [Cómo ejecutar la web](#cómo-ejecutar-la-web)
-5. [Páginas](#páginas)
-6. [Validación del formulario de login](#validación-del-formulario-de-login)
-7. [Diseño visual y responsive](#diseño-visual-y-responsive)
-8. [Limitaciones conocidas](#limitaciones-conocidas)
+2. [Estructura de carpetas](#estructura-de-carpetas)
+3. [Cómo ejecutar la web](#cómo-ejecutar-la-web)
+4. [Páginas](#páginas)
+5. [Validación del formulario de login](#validación-del-formulario-de-login)
+6. [Diseño visual y responsive](#diseño-visual-y-responsive)
+7. [Limitaciones conocidas](#limitaciones-conocidas)
 
 ---
 
@@ -33,36 +31,6 @@ Tecnologías:
 - **JavaScript** vainilla (sin módulos ni `class`).
 - **localStorage** para el carrito y **sessionStorage** para la sesión.
 
----
-
-## Cumplimiento del enunciado
-
-| Requisito                                                                 | Cumplido |
-|---------------------------------------------------------------------------|:--------:|
-| Web semántica con CSS y JS separados de HTML                              | ✅ |
-| Carpetas `css/`, `scripts/`, `img/`                                       | ✅ |
-| Responsive y adaptada a móvil                                             | ✅ |
-| Favicon                                                                   | ✅ |
-| Cabecera con logo, idiomas, icono de login e icono de carrito visible     | ✅ |
-| Menú con Inicio, Listado de productos, Sobre Nosotros (y Contacto extra)  | ✅ |
-| Login en HTML aparte con validación de contraseña                         | ✅ |
-| Validaciones: 6-12, mayúscula, minúscula, número                          | ✅ |
-| Botón Login que guarda usuario en sesión                                  | ✅ |
-| Botón Cerrar Sesión                                                       | ✅ |
-| Home con visión general y listado breve de productos (Grid/Flexbox)       | ✅ |
-| Botón **Añadir al carrito** + acceso al detalle del producto              | ✅ |
-| Página de listado completo con la misma información mínima                | ✅ |
-| Filtro por categoría/nombre (opcional)                                    | ✅ |
-| Detalle de producto con foto, nombre, descripción, categoría y precio     | ✅ |
-| Botón añadir que guarda en `localStorage`                                 | ✅ |
-| Página Sobre Nosotros informativa                                         | ✅ |
-| Página de carrito con eliminación de productos                            | ✅ |
-| Footer con copyright siempre visible                                      | ✅ |
-| Sin librerías ni frameworks                                               | ✅ |
-
-> Animaciones del login y de la página 404 implementadas con GSAP, usadas con autorización expresa de la profesora.
-
----
 
 ## Estructura de carpetas
 
@@ -107,21 +75,8 @@ Funciona en la mayoría de navegadores, pero algunos bloquean parámetros de URL
 o `localStorage` con el protocolo `file://`. Si el carrito no guarda o el
 detalle no encuentra el id, usar la opción B.
 
-### Opción B — Servidor local rápido
 
-Desde la carpeta del proyecto:
-
-```bash
-# Con Python 3
-python -m http.server 8000
-
-# Con Node (npx)
-npx serve .
-```
-
-Después, abrir [http://localhost:8000](http://localhost:8000).
-
-### Opción C — Extensión "Live Server" de VS Code
+### Opción B — Extensión "Live Server" de VS Code
 
 Click derecho sobre `index.html` → *Open with Live Server*.
 
