@@ -1,9 +1,3 @@
-/* ============================================================
-   PÁGINA DE LISTADO DE PRODUCTOS
-   Muestra todos los productos disponibles con un buscador por
-   nombre y un filtro por categoría (opcional según el enunciado).
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
     prepararFiltros();
     pintarListadoCompleto(productos);
@@ -20,7 +14,7 @@ function prepararFiltros() {
     }
 
     var categorias = obtenerCategoriasUnicas();
-    for (var i = 0; i < categorias.length; i++) {
+    for (let i = 0; i < categorias.length; i++) {
         var opcion = document.createElement("option");
         opcion.value = categorias[i];
         opcion.textContent = categorias[i];
@@ -34,10 +28,10 @@ function prepararFiltros() {
 // Devuelve la lista de categorías distintas que hay en el catálogo.
 function obtenerCategoriasUnicas() {
     var resultado = [];
-    for (var i = 0; i < productos.length; i++) {
+    for (let i = 0; i < productos.length; i++) {
         var c = productos[i].categoria;
         var yaEsta = false;
-        for (var j = 0; j < resultado.length; j++) {
+        for (let j = 0; j < resultado.length; j++) {
             if (resultado[j] === c) {
                 yaEsta = true;
                 break;
@@ -59,7 +53,7 @@ function aplicarFiltros() {
         .trim();
 
     var filtrados = [];
-    for (var i = 0; i < productos.length; i++) {
+    for (let i = 0; i < productos.length; i++) {
         var p = productos[i];
         var coincideCategoria =
             categoria === "todas" || p.categoria === categoria;
@@ -89,7 +83,7 @@ function pintarListadoCompleto(lista) {
         return;
     }
 
-    for (var i = 0; i < lista.length; i++) {
+    for (let i = 0; i < lista.length; i++) {
         // Reutilizamos crearTarjetaProducto definido en inicio.js.
         contenedor.appendChild(crearTarjetaProducto(lista[i]));
     }

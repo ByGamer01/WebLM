@@ -1,10 +1,3 @@
-/* ============================================================
-   GESTIÓN DEL CARRITO
-   Guarda y recupera los productos añadidos por el usuario en
-   localStorage para que persistan entre páginas y recargas.
-   ============================================================ */
-
-// Clave que se utiliza en localStorage para almacenar el carrito.
 var CLAVE_CARRITO = "forza_carrito";
 
 // Recupera la lista de identificadores de productos guardados
@@ -26,7 +19,7 @@ function guardarCarrito(lista) {
 // Devuelve true si se ha añadido, false si ya estaba presente.
 function anadirAlCarrito(idProducto) {
     var carrito = obtenerCarrito();
-    for (var i = 0; i < carrito.length; i++) {
+    for (let i = 0; i < carrito.length; i++) {
         if (carrito[i] === idProducto) {
             return false;
         }
@@ -41,7 +34,7 @@ function anadirAlCarrito(idProducto) {
 function eliminarDelCarrito(idProducto) {
     var carrito = obtenerCarrito();
     var nuevoCarrito = [];
-    for (var i = 0; i < carrito.length; i++) {
+    for (let i = 0; i < carrito.length; i++) {
         if (carrito[i] !== idProducto) {
             nuevoCarrito.push(carrito[i]);
         }

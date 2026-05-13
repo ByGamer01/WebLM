@@ -1,9 +1,3 @@
-/* ============================================================
-   PÁGINA DE INICIO DE SESIÓN
-   Valida el formulario en tiempo real (longitud, mayúscula,
-   minúscula y número) y guarda el usuario en sessionStorage.
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
     inicializarFormularioLogin();
 });

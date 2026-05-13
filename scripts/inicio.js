@@ -1,9 +1,3 @@
-/* ============================================================
-   PÁGINA DE INICIO
-   Muestra una selección destacada de productos en la home y
-   permite añadir cualquiera al carrito directamente desde aquí.
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
     pintarProductosDestacados();
 });
@@ -21,7 +15,7 @@ function pintarProductosDestacados() {
     grid.textContent = "";
 
     var maximo = Math.min(4, productos.length);
-    for (var i = 0; i < maximo; i++) {
+    for (let i = 0; i < maximo; i++) {
         grid.appendChild(crearTarjetaProducto(productos[i]));
     }
 }

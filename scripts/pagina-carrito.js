@@ -1,9 +1,3 @@
-/* ============================================================
-   PÁGINA DEL CARRITO
-   Muestra los productos que el usuario ha añadido al carrito y
-   permite eliminarlos uno a uno. Calcula el precio total.
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
     pintarCarrito();
 });
@@ -32,7 +26,7 @@ function pintarCarrito() {
     }
 
     var total = 0;
-    for (var i = 0; i < ids.length; i++) {
+    for (let i = 0; i < ids.length; i++) {
         var producto = buscarProductoPorId(ids[i]);
         if (producto !== null) {
             contenedor.appendChild(crearFilaCarrito(producto));

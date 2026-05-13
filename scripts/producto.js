@@ -1,9 +1,3 @@
-/* ============================================================
-   PÁGINA DE DETALLE DE PRODUCTO
-   Lee el id de producto que llega por la URL (?id=...) y muestra
-   toda su información, junto con un botón para añadir al carrito.
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
     pintarDetalleProducto();
 });

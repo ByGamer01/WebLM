@@ -1,11 +1,3 @@
-/* ============================================================
-   GESTIÓN DE SESIÓN Y CABECERA
-   Construye la parte derecha de la cabecera con el selector de
-   idioma, el icono del carrito y los enlaces de inicio o
-   cierre de sesión, dependiendo de si hay un usuario activo.
-   ============================================================ */
-
-// Clave usada para guardar el nombre de usuario en sessionStorage.
 var CLAVE_USUARIO = "usuario";
 
 // Devuelve el nombre del usuario activo, o null si no hay sesión.
@@ -97,7 +89,7 @@ function crearBotonIdioma(codigo, activo) {
     boton.addEventListener("click", function () {
         // Marca como activo el idioma pulsado y desmarca el resto.
         var botones = document.querySelectorAll(".btn-idioma");
-        for (var i = 0; i < botones.length; i++) {
+        for (let i = 0; i < botones.length; i++) {
             botones[i].classList.remove("activo");
         }
         boton.classList.add("activo");

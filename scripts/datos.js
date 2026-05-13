@@ -1,12 +1,3 @@
-/* ============================================================
-   DATOS DE PRODUCTOS (FORZA)
-   Listado de programas de entrenamiento que se muestran en la
-   página de inicio, en el listado de productos y en el detalle.
-   ============================================================ */
-
-// Lista de productos disponibles en la web.
-// Cada producto contiene: id, nombre, descripción, categoría,
-// nivel, duración, precio (en euros) y una clase CSS de imagen.
 var productos = [
     {
         id: 1,
@@ -73,7 +64,7 @@ var productos = [
 // Devuelve el producto que corresponde al id indicado.
 // Si no existe, devuelve null.
 function buscarProductoPorId(id) {
-    for (var i = 0; i < productos.length; i++) {
+    for (let i = 0; i < productos.length; i++) {
         if (productos[i].id === id) {
             return productos[i];
         }

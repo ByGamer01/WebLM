@@ -1,12 +1,3 @@
-/* ============================================================
-   FALLBACK PARA PÁGINAS NO ENCONTRADAS
-   En servidores que no respetan .htaccess (por ejemplo abrir el
-   sitio con el protocolo file://), este script comprueba con un
-   HEAD request si la página interna a la que se va a navegar
-   existe. Si no existe, redirige a 404.html en su lugar.
-   No afecta a enlaces externos ni a anchors (#).
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
     activarRedireccion404();
 });
@@ -14,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Engancha un manejador a todos los enlaces internos del documento.
 function activarRedireccion404() {
     var enlaces = document.querySelectorAll("a[href]");
-    for (var i = 0; i < enlaces.length; i++) {
+    for (let i = 0; i < enlaces.length; i++) {
         var enlace = enlaces[i];
         if (esEnlaceInterno(enlace)) {
             enlace.addEventListener("click", manejarClic);
