@@ -15,7 +15,7 @@
    vuelva a funcionar; la lógica y los timings son los del pen.
    ============================================================ */
 
-// Registro el plugin para que .to({ morphSVG: ... }) funcione.
+// Registro el plugin para que .to({ morphSVG: ... }) funcione
 gsap.registerPlugin(MorphSVGPlugin);
 
 var
@@ -35,13 +35,13 @@ var
 	mouthShape3 = "M150.2 118.3c-4.6 3.7-7.5 6.4-6.3 12.3.1.5.1.6.3 1.1.6 1.5 2.4 2.3 3.9 1.7 0 0 7.9-4.3 10.7-5.5s11.6-3.3 11.6-3.3c1.5-.6 2.3-2.4 1.7-3.9-.2-.5-.2-.6-.4-1.1-2.8-5.2-7.1-4.9-12.9-4.6-3.7.4-6.3 1.5-8.6 3.3z",
 	mouthShape4 = "M149.2 116.7c-4.6 3.7-6.7 8.8-5.2 14.6.1.3.1.5.2.8.6 1.5 2.4 2.3 3.9 1.7l11.2-4.4 11.2-4.4c1.5-.6 2.3-2.4 1.7-3.9-.1-.3-.2-.5-.4-.7-2.8-5.2-8.2-7.2-14-6.9-3.6.2-5.9 1.1-8.6 3.2z";
 
-// Bucle corto que mueve la boca y la barbilla (chatter = parloteo).
+// Bucle corto que mueve la boca y la barbilla (chatter = parloteo)
 chatterTL = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
 chatterTL
 	.to(['#mouthBG', '#mouthPath', '#mouthOutline'], { duration: 0.1, morphSVG: mouthShape4 }, 0)
 	.to('#chin', { duration: 0.1, y: 1.5 }, 0);
 
-// Línea de tiempo principal: linterna parpadeando, susto y vuelta a la calma.
+// Línea de tiempo principal: linterna parpadeando, susto y vuelta a la calma
 yetiTL = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0, delay: 0 });
 yetiTL
 	.call(function () { chatterTL.play(); }, null, 0)
@@ -86,7 +86,7 @@ yetiTL
 	.to(['#armL', '#flashlightFront'], { duration: 0.075, x: 7 }, 11.8)
 	.to(['#armL', '#flashlightFront'], { duration: 0.075, x: 0 }, 11.875);
 
-// Modo oscuro: linterna apagada, colores apagados.
+// Modo oscuro: linterna apagada, colores apagados
 function goDark() {
 	gsap.set('#light', { visibility: "hidden" });
 	gsap.set('.lettersSide',  { fill: lettersSideDark,  stroke: lettersStrokeDark });
@@ -96,7 +96,7 @@ function goDark() {
 	gsap.set('.hlSkin', { fill: skinDarkColor });
 }
 
-// Modo iluminado: linterna encendida, colores claros.
+// Modo iluminado: linterna encendida, colores claros
 function goLight() {
 	gsap.set('#light', { visibility: "visible" });
 	gsap.set('.lettersSide',  { fill: lettersSideLight,  stroke: lettersStrokeLight });
