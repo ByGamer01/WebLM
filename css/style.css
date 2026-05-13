@@ -6,7 +6,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; color: #222; background: #f5f5f5; line-height: 1.6; }
+body { font-family: Arial, sans-serif; color: #222; background: #09334f; line-height: 1.6; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: disc; padding-left: 20px; }
 
@@ -27,7 +27,7 @@ nav a:hover, nav a.active { color: #fff; }
 .btn-logout { background: #e63946; color: #fff; border: none; padding: 6px 12px; font-size: 0.8rem; cursor: pointer; font-weight: bold; }
 .btn-logout:hover { background: #c5303c; }
 
-.hero { text-align: center; padding: 80px 32px; background: #333; color: #fff; }
+.hero { text-align: center; padding: 80px 32px; background: #072a3e; color: #fff; }
 .hero h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 3.2rem; font-weight: normal; letter-spacing: 0.04em; margin-bottom: 12px; }
 .hero p { margin-bottom: 24px; color: #ccc; }
 
@@ -37,10 +37,10 @@ nav a:hover, nav a.active { color: #fff; }
 .btn-pequeno { padding: 8px 14px; font-size: 0.8rem; }
 
 .entrenamientos, .listado { padding: 48px 32px; max-width: 1200px; margin: 0 auto; }
-.entrenamientos h2, .listado h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.4rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 8px; }
-.subtitulo { color: #666; margin-bottom: 24px; }
+.entrenamientos h2, .listado h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.4rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 8px; color: #fff; }
+.subtitulo { color: #a8c5d8; margin-bottom: 24px; }
 .filtros { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
-.filtros label { font-size: 0.85rem; display: flex; flex-direction: column; gap: 4px; font-weight: bold; color: #444; }
+.filtros label { font-size: 0.85rem; display: flex; flex-direction: column; gap: 4px; font-weight: bold; color: #c5dbe9; }
 .filtros input, .filtros select { padding: 8px 10px; border: 1px solid #ccc; font-size: 0.9rem; font-family: inherit; min-width: 220px; font-weight: normal; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
@@ -62,7 +62,7 @@ nav a:hover, nav a.active { color: #fff; }
 .acciones { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; }
 .enlace-detalle { color: #e63946; font-size: 0.85rem; font-weight: bold; }
 .enlace-detalle:hover { text-decoration: underline; }
-.aviso-vacio { color: #888; font-style: italic; grid-column: 1 / -1; text-align: center; padding: 40px 0; }
+.aviso-vacio { color: #88aac0; font-style: italic; grid-column: 1 / -1; text-align: center; padding: 40px 0; }
 
 .producto { padding: 48px 32px; max-width: 1000px; margin: 0 auto; }
 .volver { display: inline-block; margin-bottom: 20px; color: #e63946; font-size: 0.9rem; font-weight: bold; }
@@ -76,20 +76,20 @@ nav a:hover, nav a.active { color: #fff; }
 .lista-detalles li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #444; }
 
 .sobre { padding: 48px 32px; max-width: 800px; margin: 0 auto; }
-.sobre h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 24px; }
+.sobre h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 24px; color: #fff; }
 .bloque-sobre { background: #fff; border: 1px solid #ddd; padding: 20px; margin-bottom: 16px; }
 .bloque-sobre h2 { font-size: 1.1rem; margin-bottom: 8px; color: #e63946; }
 .bloque-sobre p { color: #555; font-size: 0.95rem; }
-.valores { margin-top: 24px; padding-left: 20px; color: #444; }
+.valores { margin-top: 24px; padding-left: 20px; color: #d1e2ed; }
 .valores li { margin-bottom: 8px; font-size: 0.95rem; }
 
 .contacto { padding: 80px 32px; max-width: 700px; margin: 0 auto; text-align: center; }
-.contacto h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 16px; }
-.contacto p { color: #555; margin-bottom: 12px; }
+.contacto h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 16px; color: #fff; }
+.contacto p { color: #d1e2ed; margin-bottom: 12px; }
 .contacto a { color: #e63946; font-weight: bold; }
 
 .carrito { padding: 48px 32px; max-width: 800px; margin: 0 auto; }
-.carrito h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 8px; }
+.carrito h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 8px; color: #fff; }
 .lista-carrito { margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
 .fila-carrito { display: flex; align-items: center; background: #fff; border: 1px solid #ddd; padding: 12px; gap: 16px; }
 .fila-img { width: 80px; height: 80px; flex-shrink: 0; }
@@ -98,7 +98,7 @@ nav a:hover, nav a.active { color: #fff; }
 .fila-datos .precio { margin-top: 6px; font-size: 0.95rem; }
 .btn-eliminar { background: #fff; border: 1px solid #e63946; color: #e63946; padding: 8px 14px; font-size: 0.8rem; cursor: pointer; font-weight: bold; }
 .btn-eliminar:hover { background: #e63946; color: #fff; }
-.total { text-align: right; font-size: 1.2rem; font-weight: bold; margin: 16px 0 24px; color: #222; }
+.total { text-align: right; font-size: 1.2rem; font-weight: bold; margin: 16px 0 24px; color: #fff; }
 
 .login { max-width: 420px; margin: 48px auto; padding: 32px; background: #fff; border: 1px solid #ddd; border-radius: 0.5em; }
 .login h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.2rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 20px; text-align: center; }
