@@ -108,7 +108,7 @@ nav a.active {
     border-color: #e63946;
 }
 
-/* Icono de la cistella siempre visible */
+/* Icono del carrito siempre visible */
 .icono-carrito {
     position: relative;
     font-size: 1.3rem;
@@ -516,15 +516,15 @@ nav a.active {
 }
 
 /* ============================================================
-   CISTELLA / CARRITO
+   CARRITO
    ============================================================ */
-.cistella {
+.carrito {
     padding: 48px 32px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.cistella h1 {
+.carrito h1 {
     font-family: 'SongOfValentine', Arial, sans-serif;
     font-size: 2.6rem;
     font-weight: normal;
@@ -532,14 +532,14 @@ nav a.active {
     margin-bottom: 8px;
 }
 
-.lista-cistella {
+.lista-carrito {
     margin: 24px 0;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.fila-cistella {
+.fila-carrito {
     display: flex;
     align-items: center;
     background: #fff;
@@ -872,7 +872,7 @@ footer {
     .listado,
     .producto,
     .sobre,
-    .cistella,
+    .carrito,
     .contacto {
         padding: 32px 16px;
     }
@@ -887,7 +887,7 @@ footer {
         flex: 1 1 100%;
     }
 
-    .fila-cistella {
+    .fila-carrito {
         flex-wrap: wrap;
     }
 
