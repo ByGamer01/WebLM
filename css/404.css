@@ -6,6 +6,7 @@ body, html {
   -webkit-font-smoothing: antialiased;
   background-color: #09334f;
   position: relative;
+  min-height: 100vh;
 }
 
 #yetiSVG {
@@ -27,7 +28,7 @@ body, html {
 }
 
 .content {
-  padding: 5rem 3rem 0 25rem;
+  padding: 5rem 3rem 80px 25rem;
   position: relative;
   z-index: 10;
   font-family: "Source Sans Pro", sans-serif;
@@ -82,7 +83,7 @@ body, html {
 
 @media (max-width: 768px) {
   .content {
-    padding: 26rem 1.5rem 2rem 1.5rem;
+    padding: 26rem 1.5rem 80px 1.5rem;
     text-align: center;
   }
   #yetiSVG, #lightSVG {
@@ -93,22 +94,22 @@ body, html {
 
 /* Footer FORZA */
 footer {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   background: #222;
-  color: #888;
-  padding: 24px 32px;
-  margin-top: 48px;
+  color: #fff;
+  padding: 14px 28px;
+  text-align: center;
 }
 
-.footer-contenido {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 1.8;
+.footer-contenido p {
+  margin: 2px 0;
+  font-size: 0.85rem;
 }
 
 .footer-contenido strong {
-  color: #fff;
+  color: #e63946;
 }
