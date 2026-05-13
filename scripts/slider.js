@@ -1,4 +1,4 @@
-3.15-var SLIDER_STEP = 280;
+var SLIDER_STEP = 280;
 
 function sliderPrev() {
     document.getElementById('slider-container').scrollLeft -= SLIDER_STEP;
@@ -33,4 +33,3 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.classList.remove('active');
     });
 });
-*
