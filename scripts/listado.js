@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     pintarListadoCompleto(productos);
 });
 
-// Rellena el desplegable de categorías con las categorías que
-// existen realmente en el catálogo y conecta los eventos de
-// búsqueda y filtrado.
+// Rellena el desplegable de categorías y conecta los filtros de búsqueda
 function prepararFiltros() {
     var selectorCategoria = document.getElementById("filtro-categoria");
     var entradaBusqueda = document.getElementById("filtro-busqueda");
@@ -25,7 +23,7 @@ function prepararFiltros() {
     entradaBusqueda.addEventListener("input", aplicarFiltros);
 }
 
-// Devuelve la lista de categorías distintas que hay en el catálogo.
+// Devuelve la lista de categorías distintas que hay en el catálogo
 function obtenerCategoriasUnicas() {
     var resultado = [];
     for (let i = 0; i < productos.length; i++) {
@@ -44,8 +42,7 @@ function obtenerCategoriasUnicas() {
     return resultado;
 }
 
-// Toma los valores actuales de los filtros y vuelve a pintar
-// solo los productos que cumplen las condiciones.
+// Aplica los filtros activos y repinta el listado
 function aplicarFiltros() {
     var categoria = document.getElementById("filtro-categoria").value;
     var texto = document.getElementById("filtro-busqueda").value
@@ -66,8 +63,7 @@ function aplicarFiltros() {
     pintarListadoCompleto(filtrados);
 }
 
-// Pinta dentro del contenedor "grid-listado" todas las tarjetas
-// que se le pasen. Si la lista está vacía, muestra un aviso.
+// Pinta las tarjetas en grid-listado, o un aviso si la lista está vacía
 function pintarListadoCompleto(lista) {
     var contenedor = document.getElementById("grid-listado");
     if (contenedor === null) {
@@ -84,7 +80,7 @@ function pintarListadoCompleto(lista) {
     }
 
     for (let i = 0; i < lista.length; i++) {
-        // Reutilizamos crearTarjetaProducto definido en inicio.js.
+        // Reutilizamos crearTarjetaProducto definido en inicio.js
         contenedor.appendChild(crearTarjetaProducto(lista[i]));
     }
 }
