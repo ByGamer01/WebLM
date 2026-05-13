@@ -77,7 +77,7 @@ function pintarDetalleProducto() {
 
     var botonAnadir = document.createElement("button");
     botonAnadir.className = "btn";
-    botonAnadir.textContent = "Añadir a la cistella";
+    botonAnadir.textContent = "Añadir al carrito";
     botonAnadir.addEventListener("click", function () {
         gestionarAnadirAlCarrito(producto, botonAnadir);
     });
