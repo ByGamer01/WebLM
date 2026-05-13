@@ -61,7 +61,7 @@ function crearTarjetaProducto(producto) {
 
     var botonAnadir = document.createElement("button");
     botonAnadir.className = "btn btn-pequeno";
-    botonAnadir.textContent = "Añadir a la cistella";
+    botonAnadir.textContent = "Añadir al carrito";
     botonAnadir.addEventListener("click", function () {
         gestionarAnadirAlCarrito(producto, botonAnadir);
     });
@@ -83,7 +83,7 @@ function formatearPrecio(valor) {
     return valor.toFixed(2) + " €";
 }
 
-// Lógica común para los botones "Añadir a la cistella": añade
+// Lógica común para los botones "Añadir al carrito": añade
 // el producto, da retroalimentación visual y bloquea el botón
 // si ya estaba dentro del carrito.
 function gestionarAnadirAlCarrito(producto, boton) {
@@ -92,7 +92,7 @@ function gestionarAnadirAlCarrito(producto, boton) {
         boton.textContent = "✓ Añadido";
         boton.disabled = true;
     } else {
-        boton.textContent = "Ya está en la cistella";
+        boton.textContent = "Ya está en el carrito";
         boton.disabled = true;
     }
 }
