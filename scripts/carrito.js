@@ -1,7 +1,6 @@
 var CLAVE_CARRITO = "forza_carrito";
 
-// Recupera la lista de identificadores de productos guardados
-// en el carrito. Si todavía no hay nada, devuelve una lista vacía.
+// Recupera los ids del carrito desde localStorage, o [] si está vacío
 function obtenerCarrito() {
     var datos = localStorage.getItem(CLAVE_CARRITO);
     if (datos === null || datos === "") {
@@ -10,13 +9,12 @@ function obtenerCarrito() {
     return JSON.parse(datos);
 }
 
-// Guarda la lista de identificadores en localStorage.
+// Guarda la lista de identificadores en localStorage
 function guardarCarrito(lista) {
     localStorage.setItem(CLAVE_CARRITO, JSON.stringify(lista));
 }
 
-// Añade un producto al carrito si todavía no estaba dentro.
-// Devuelve true si se ha añadido, false si ya estaba presente.
+// Añade un producto si no estaba; devuelve true si se añadió, false si ya existía
 function anadirAlCarrito(idProducto) {
     var carrito = obtenerCarrito();
     for (let i = 0; i < carrito.length; i++) {
@@ -30,7 +28,7 @@ function anadirAlCarrito(idProducto) {
     return true;
 }
 
-// Elimina un producto del carrito a partir de su id.
+// Elimina un producto del carrito a partir de su id
 function eliminarDelCarrito(idProducto) {
     var carrito = obtenerCarrito();
     var nuevoCarrito = [];
@@ -43,14 +41,12 @@ function eliminarDelCarrito(idProducto) {
     actualizarContadorCarrito();
 }
 
-// Indica cuántos productos hay actualmente en el carrito.
+// Indica cuántos productos hay actualmente en el carrito
 function contarProductosCarrito() {
     return obtenerCarrito().length;
 }
 
-// Refresca el número que aparece junto al icono del carrito
-// en la cabecera. Se llama al cargar la página y cada vez que
-// se añade o se elimina un producto.
+// Refresca el contador del icono de carrito en la cabecera
 function actualizarContadorCarrito() {
     var contador = document.getElementById("contador-carrito");
     if (contador !== null) {
