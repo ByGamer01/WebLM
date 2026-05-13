@@ -75,10 +75,6 @@ WebLM/
 ├── contacto.html           ← Datos de contacto
 ├── login.html              ← Formulario de inicio de sesión
 ├── carrito.html            ← Carrito con productos añadidos
-├── producto.json           ← Representación JSON (entrega anterior)
-├── producto.schema.json    ← JSON Schema asociado
-├── producto.xml            ← Representación XML (entrega anterior)
-├── producto.xsd            ← XSD de validación
 │
 ├── css/
 │   └── style.css           ← Hoja de estilos completa
