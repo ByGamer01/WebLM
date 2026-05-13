@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     pintarCarrito();
 });
 
-// Pinta la lista de productos del carrito dentro del contenedor
-// "lista-carrito". Si está vacío, muestra un mensaje.
+// Pinta los productos del carrito en lista-carrito, o un aviso si está vacío
 function pintarCarrito() {
     var contenedor = document.getElementById("lista-carrito");
     var totalContenedor = document.getElementById("total-carrito");
@@ -39,8 +38,7 @@ function pintarCarrito() {
     }
 }
 
-// Crea la fila visual que representa un producto dentro del carrito,
-// con su imagen, nombre, precio y botón para eliminarlo.
+// Crea la fila visual de un producto en el carrito
 function crearFilaCarrito(producto) {
     var fila = document.createElement("article");
     fila.className = "fila-carrito";
