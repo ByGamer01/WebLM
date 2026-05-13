@@ -1,4 +1,4 @@
-/* ============================================================
+/* 
    ANIMACIÓN YETI DEL LOGIN
    El yeti sigue al cursor mientras se escribe el usuario y se
    tapa los ojos cuando el campo de la contraseña recibe el foco.
@@ -6,7 +6,7 @@
 
    Animación adaptada de:
    https://codepen.io/m3eu/pen/VwYBbwO  (autor original: m3eu)
-   ============================================================ */
+ */
 
 document.addEventListener("DOMContentLoaded", function () {
     inicializarYeti();
