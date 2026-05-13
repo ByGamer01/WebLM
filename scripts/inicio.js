@@ -2,16 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     pintarProductosDestacados();
 });
 
-// Pinta los primeros cuatro productos del catálogo dentro del
-// contenedor con id "grid-inicio". Cada tarjeta tiene un botón
-// para añadir el producto al carrito y otro para ver detalles.
+// Pinta los primeros 4 productos del catálogo en grid-inicio
 function pintarProductosDestacados() {
     var grid = document.getElementById("grid-inicio");
     if (grid === null) {
         return;
     }
 
-    // Limpiamos el contenedor antes de añadir nada.
+    // Limpiamos el contenedor antes de añadir nada
     grid.textContent = "";
 
     var maximo = Math.min(4, productos.length);
@@ -20,7 +18,7 @@ function pintarProductosDestacados() {
     }
 }
 
-// Crea una tarjeta visual para un producto del catálogo.
+// Crea una tarjeta visual para un producto del catálogo
 function crearTarjetaProducto(producto) {
     var tarjeta = document.createElement("article");
     tarjeta.className = "card";
@@ -72,14 +70,12 @@ function crearTarjetaProducto(producto) {
     return tarjeta;
 }
 
-// Devuelve el precio con dos decimales y el símbolo del euro.
+// Devuelve el precio con dos decimales y el símbolo del euro
 function formatearPrecio(valor) {
     return valor.toFixed(2) + " €";
 }
 
-// Lógica común para los botones "Añadir al carrito": añade
-// el producto, da retroalimentación visual y bloquea el botón
-// si ya estaba dentro del carrito.
+// Añade el producto al carrito, da feedback visual y bloquea el botón si ya existe
 function gestionarAnadirAlCarrito(producto, boton) {
     var anadido = anadirAlCarrito(producto.id);
     if (anadido) {
