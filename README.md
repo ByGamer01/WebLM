@@ -28,7 +28,7 @@ Toda la lógica, los nombres de funciones y los comentarios están en español.
 
 **FORZA** es una web ficticia que vende programas de entrenamiento personal
 (fuerza, cardio, flexibilidad, HIIT, funcional, yoga). Cubre toda la
-experiencia mínima de un e-commerce: catálogo, detalle, cistella (carrito),
+experiencia mínima de un e-commerce: catálogo, detalle, carrito,
 inicio de sesión y páginas informativas.
 
 Tecnologías:
@@ -49,22 +49,24 @@ Tecnologías:
 | Carpetas `css/`, `scripts/`, `img/`                                       | ✅ |
 | Responsive y adaptada a móvil                                             | ✅ |
 | Favicon                                                                   | ✅ |
-| Cabecera con logo, idiomas, icono de login e icono de cistella visible    | ✅ |
+| Cabecera con logo, idiomas, icono de login e icono de carrito visible     | ✅ |
 | Menú con Inicio, Listado de productos, Sobre Nosotros (y Contacto extra)  | ✅ |
 | Login en HTML aparte con validación de contraseña                         | ✅ |
 | Validaciones: 6-12, mayúscula, minúscula, número                          | ✅ |
 | Botón Login que guarda usuario en sesión                                  | ✅ |
 | Botón Cerrar Sesión                                                       | ✅ |
 | Home con visión general y listado breve de productos (Grid/Flexbox)       | ✅ |
-| Botón **Añadir a la cistella** + acceso al detalle del producto           | ✅ |
+| Botón **Añadir al carrito** + acceso al detalle del producto           | ✅ |
 | Página de listado completo con la misma información mínima                | ✅ |
 | Filtro por categoría/nombre (opcional)                                    | ✅ |
 | Detalle de producto con foto, nombre, descripción, categoría y precio     | ✅ |
 | Botón añadir que guarda en `localStorage`                                 | ✅ |
 | Página Sobre Nosotros informativa                                         | ✅ |
-| Página de cistella con eliminación de productos                           | ✅ |
+| Página de carrito con eliminación de productos                            | ✅ |
 | Footer con copyright siempre visible                                      | ✅ |
 | Sin librerías ni frameworks                                               | ✅ |
+
+> Animaciones del login y de la página 404 implementadas con GSAP, usadas con autorización expresa de la profesora.
 
 ---
 
@@ -78,7 +80,7 @@ WebLM/
 ├── sobre-nosotros.html     ← Página informativa
 ├── contacto.html           ← Datos de contacto
 ├── login.html              ← Formulario de inicio de sesión
-├── carrito.html            ← Cistella con productos añadidos
+├── carrito.html            ← Carrito con productos añadidos
 ├── producto.json           ← Representación JSON (entrega anterior)
 ├── producto.schema.json    ← JSON Schema asociado
 ├── producto.xml            ← Representación XML (entrega anterior)
@@ -100,7 +102,7 @@ WebLM/
     ├── inicio.js           ← Render de productos destacados (home)
     ├── listado.js          ← Render del catálogo + filtros
     ├── producto.js         ← Render del detalle a partir de ?id=
-    └── cistella.js         ← Render del carrito y eliminación
+    └── pagina-carrito.js   ← Render del carrito y eliminación
 ```
 
 ---
@@ -144,7 +146,7 @@ Click derecho sobre `index.html` → *Open with Live Server*.
 - Hero con eslogan y CTA al catálogo.
 - Cuatro productos destacados pintados con `inicio.js` desde `productos`.
 - Cada tarjeta: imagen, badge de categoría, nombre, descripción, precio,
-  botón **Añadir a la cistella** y enlace **Ver detalles**.
+  botón **Añadir al carrito** y enlace **Ver detalles**.
 
 ### `entrenamientos.html` — Listado de productos
 - Catálogo completo (todos los productos).
@@ -157,7 +159,7 @@ Click derecho sobre `index.html` → *Open with Live Server*.
 - Lee `?id=N` de la URL con `URLSearchParams`.
 - Pinta foto, badge, nombre, descripción, precio y lista de detalles
   (categoría, nivel, duración).
-- Botón **Añadir a la cistella** que llama a `anadirAlCarrito(id)`.
+- Botón **Añadir al carrito** que llama a `anadirAlCarrito(id)`.
 - Si el id no existe, muestra un aviso.
 
 ### `sobre-nosotros.html` — Página informativa
@@ -177,11 +179,11 @@ Click derecho sobre `index.html` → *Open with Live Server*.
   el usuario y se tapa los ojos al enfocar la contraseña). Animación
   adaptada de [https://codepen.io/m3eu/pen/VwYBbwO](https://codepen.io/m3eu/pen/VwYBbwO).
 
-### `carrito.html` — Cistella
+### `carrito.html` — Carrito
 - Lista los productos cuyo id está en `localStorage`.
 - Cada fila: foto, nombre, badge, precio, botón **Eliminar**.
 - Total acumulado y CTA "Seguir comprando".
-- Si está vacío, muestra mensaje "Tu cistella está vacía".
+- Si está vacío, muestra mensaje "Tu carrito está vacío".
 
 ---
 
@@ -287,7 +289,7 @@ Además:
   1. `datos.js`
   2. `carrito.js`
   3. `sesion.js`
-  4. (opcional) `inicio.js` — define `crearTarjetaProducto` reutilizada por listado y cistella.
+  4. (opcional) `inicio.js` — define `crearTarjetaProducto` reutilizada por listado y carrito.
   5. Script específico de la página (`listado.js`, `producto.js`, …).
 - **Construcción de DOM:** siempre con `document.createElement` y
   `textContent` (nunca `innerHTML`) para evitar XSS.
@@ -354,8 +356,8 @@ Antes de entregar, recomiendo recorrer estos casos:
 - [ ] `producto.html?id=999` muestra "El producto solicitado no existe".
 - [ ] Añadir desde el detalle incrementa el contador 🛒.
 
-**Cistella**
-- [ ] Sin productos: mensaje de cistella vacía.
+**Carrito**
+- [ ] Sin productos: mensaje de carrito vacío.
 - [ ] Con productos: aparecen, total correcto, eliminar funciona.
 - [ ] El total se recalcula al eliminar.
 - [ ] El carrito **persiste** al cerrar y abrir el navegador (localStorage).
