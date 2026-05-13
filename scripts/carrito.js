@@ -55,7 +55,7 @@ function contarProductosCarrito() {
     return obtenerCarrito().length;
 }
 
-// Refresca el número que aparece junto al icono de la cistella
+// Refresca el número que aparece junto al icono del carrito
 // en la cabecera. Se llama al cargar la página y cada vez que
 // se añade o se elimina un producto.
 function actualizarContadorCarrito() {
