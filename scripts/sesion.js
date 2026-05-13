@@ -1,35 +1,34 @@
 var CLAVE_USUARIO = "usuario";
 
-// Devuelve el nombre del usuario activo, o null si no hay sesión.
+// Devuelve el nombre del usuario activo, o null si no hay sesión
 function obtenerUsuarioActivo() {
     return sessionStorage.getItem(CLAVE_USUARIO);
 }
 
-// Guarda el nombre del usuario en la sesión.
+// Guarda el nombre del usuario en la sesión
 function iniciarSesionUsuario(nombre) {
     sessionStorage.setItem(CLAVE_USUARIO, nombre);
 }
 
-// Elimina al usuario de la sesión.
+// Elimina al usuario de la sesión
 function cerrarSesionUsuario() {
     sessionStorage.removeItem(CLAVE_USUARIO);
 }
 
-// Cuando se carga el DOM, montamos la cabecera dinámica.
+// Cuando se carga el DOM, montamos la cabecera dinámica
 document.addEventListener("DOMContentLoaded", function () {
     construirCabecera();
     actualizarContadorCarrito();
 });
 
-// Construye los elementos del bloque .sesion en la cabecera:
-// idiomas, icono carrito (con contador) y zona de usuario.
+// Construye el bloque .sesion: idiomas, carrito y zona de usuario
 function construirCabecera() {
     var contenedor = document.getElementById("sesion");
     if (contenedor === null) {
         return;
     }
 
-    // Selector de idiomas (decorativo, sin recargar contenido).
+    // Selector de idiomas (decorativo, sin recargar contenido)
     var idiomas = document.createElement("div");
     idiomas.className = "idiomas";
     idiomas.appendChild(crearBotonIdioma("ES", true));
@@ -37,7 +36,7 @@ function construirCabecera() {
     idiomas.appendChild(crearBotonIdioma("CA", false));
     contenedor.appendChild(idiomas);
 
-    // Enlace al carrito siempre visible, con contador de productos.
+    // Enlace al carrito siempre visible, con contador de productos
     var enlaceCarrito = document.createElement("a");
     enlaceCarrito.href = "carrito.html";
     enlaceCarrito.className = "icono-carrito";
@@ -51,7 +50,7 @@ function construirCabecera() {
     enlaceCarrito.appendChild(contador);
     contenedor.appendChild(enlaceCarrito);
 
-    // Zona del usuario: distinta según haya o no sesión activa.
+    // Zona del usuario: distinta según haya o no sesión activa
     var zonaUsuario = document.createElement("div");
     zonaUsuario.className = "zona-usuario";
 
@@ -81,13 +80,13 @@ function construirCabecera() {
     contenedor.appendChild(zonaUsuario);
 }
 
-// Crea un botón pequeño para el selector de idioma.
+// Crea un botón pequeño para el selector de idioma
 function crearBotonIdioma(codigo, activo) {
     var boton = document.createElement("button");
     boton.className = "btn-idioma" + (activo ? " activo" : "");
     boton.textContent = codigo;
     boton.addEventListener("click", function () {
-        // Marca como activo el idioma pulsado y desmarca el resto.
+        // Marca como activo el idioma pulsado y desmarca el resto
         var botones = document.querySelectorAll(".btn-idioma");
         for (let i = 0; i < botones.length; i++) {
             botones[i].classList.remove("activo");
