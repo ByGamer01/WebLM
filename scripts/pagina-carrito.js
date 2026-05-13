@@ -1,18 +1,18 @@
 /* ============================================================
-   PÁGINA DE LA CISTELLA
+   PÁGINA DEL CARRITO
    Muestra los productos que el usuario ha añadido al carrito y
    permite eliminarlos uno a uno. Calcula el precio total.
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
-    pintarCistella();
+    pintarCarrito();
 });
 
 // Pinta la lista de productos del carrito dentro del contenedor
-// "lista-cistella". Si está vacío, muestra un mensaje.
-function pintarCistella() {
-    var contenedor = document.getElementById("lista-cistella");
-    var totalContenedor = document.getElementById("total-cistella");
+// "lista-carrito". Si está vacío, muestra un mensaje.
+function pintarCarrito() {
+    var contenedor = document.getElementById("lista-carrito");
+    var totalContenedor = document.getElementById("total-carrito");
     if (contenedor === null) {
         return;
     }
@@ -23,7 +23,7 @@ function pintarCistella() {
     if (ids.length === 0) {
         var aviso = document.createElement("p");
         aviso.className = "aviso-vacio";
-        aviso.textContent = "Tu cistella está vacía.";
+        aviso.textContent = "Tu carrito está vacío.";
         contenedor.appendChild(aviso);
         if (totalContenedor !== null) {
             totalContenedor.textContent = "";
@@ -35,7 +35,7 @@ function pintarCistella() {
     for (var i = 0; i < ids.length; i++) {
         var producto = buscarProductoPorId(ids[i]);
         if (producto !== null) {
-            contenedor.appendChild(crearFilaCistella(producto));
+            contenedor.appendChild(crearFilaCarrito(producto));
             total = total + producto.precio;
         }
     }
@@ -47,9 +47,9 @@ function pintarCistella() {
 
 // Crea la fila visual que representa un producto dentro del carrito,
 // con su imagen, nombre, precio y botón para eliminarlo.
-function crearFilaCistella(producto) {
+function crearFilaCarrito(producto) {
     var fila = document.createElement("article");
-    fila.className = "fila-cistella";
+    fila.className = "fila-carrito";
 
     var imagen = document.createElement("div");
     imagen.className = "fila-img " + producto.imagen;
@@ -79,7 +79,7 @@ function crearFilaCistella(producto) {
     botonEliminar.textContent = "Eliminar";
     botonEliminar.addEventListener("click", function () {
         eliminarDelCarrito(producto.id);
-        pintarCistella();
+        pintarCarrito();
     });
     fila.appendChild(botonEliminar);
 
