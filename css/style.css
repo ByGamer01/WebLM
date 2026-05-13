@@ -119,7 +119,7 @@ footer { background: #222; color: #888; padding: 24px 32px; margin-top: 48px; }
 .footer-contenido { max-width: 1200px; margin: 0 auto; text-align: center; font-size: 0.8rem; line-height: 1.8; }
 .footer-contenido strong { color: #fff; }
 
-.galeria-slider { background: #1e1e1e; padding: 56px 0 48px; text-align: center; overflow: hidden; }
+.galeria-slider { background: #09334f; padding: 56px 0 48px; text-align: center; overflow: hidden; }
 .galeria-slider h2 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.4rem; font-weight: normal; letter-spacing: 0.04em; color: #fff; margin-bottom: 6px; }
 .galeria-slider .slider-subtitulo { color: #888; font-size: 0.95rem; margin-bottom: 32px; }
 .slider-wrapper { position: relative; display: flex; align-items: center; }
