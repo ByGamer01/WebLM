@@ -1,933 +1,158 @@
-/* ============================================================
-   FORZA — Hoja de estilos principal
-   Estilos generales, cabecera, secciones, productos, carrito,
-   formulario de login y diseño responsive.
-   ============================================================ */
-
 @font-face {
     font-family: 'SongOfValentine';
     src: url('../fonts/songOfValentine.woff2') format('woff2'),
          url('../fonts/songOfValentine.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+    font-weight: normal; font-style: normal; font-display: swap;
 }
 
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; color: #222; background: #f5f5f5; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: disc; padding-left: 20px; }
 
-body {
-    font-family: Arial, sans-serif;
-    color: #222;
-    background: #f5f5f5;
-    line-height: 1.6;
-}
+header { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; background: #222; color: #fff; gap: 24px; flex-wrap: wrap; }
+.logo { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.4rem; font-weight: normal; letter-spacing: 0.08em; color: #e63946; line-height: 1; }
+nav { display: flex; gap: 22px; flex-wrap: wrap; }
+nav a { color: #ccc; font-size: 0.9rem; transition: color 0.15s; }
+nav a:hover, nav a.active { color: #fff; }
+.sesion { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.idiomas { display: flex; gap: 4px; }
+.btn-idioma { background: transparent; color: #aaa; border: 1px solid #444; padding: 3px 8px; font-size: 0.75rem; cursor: pointer; font-weight: bold; }
+.btn-idioma.activo, .btn-idioma:hover { background: #e63946; color: #fff; border-color: #e63946; }
+.icono-carrito { position: relative; font-size: 1.3rem; color: #fff; padding: 4px 6px; }
+.icono-carrito .contador { position: absolute; top: -2px; right: -6px; background: #e63946; color: #fff; border-radius: 10px; font-size: 0.7rem; padding: 1px 6px; font-weight: bold; min-width: 18px; text-align: center; }
+.zona-usuario { display: flex; align-items: center; gap: 8px; }
+.icono-login { font-size: 1.3rem; color: #fff; }
+.saludo { font-size: 0.85rem; color: #ccc; }
+.btn-logout { background: #e63946; color: #fff; border: none; padding: 6px 12px; font-size: 0.8rem; cursor: pointer; font-weight: bold; }
+.btn-logout:hover { background: #c5303c; }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+.hero { text-align: center; padding: 80px 32px; background: #333; color: #fff; }
+.hero h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 3.2rem; font-weight: normal; letter-spacing: 0.04em; margin-bottom: 12px; }
+.hero p { margin-bottom: 24px; color: #ccc; }
 
-ul {
-    list-style: disc;
-    padding-left: 20px;
-}
+.btn { display: inline-block; padding: 12px 28px; background: #e63946; color: #fff; font-weight: bold; font-size: 0.9rem; border: none; cursor: pointer; text-align: center; }
+.btn:hover { background: #c5303c; }
+.btn:disabled { background: #888; cursor: not-allowed; }
+.btn-pequeno { padding: 8px 14px; font-size: 0.8rem; }
 
-/* ============================================================
-   CABECERA
-   ============================================================ */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 28px;
-    background: #222;
-    color: #fff;
-    gap: 24px;
-    flex-wrap: wrap;
-}
+.entrenamientos, .listado { padding: 48px 32px; max-width: 1200px; margin: 0 auto; }
+.entrenamientos h2, .listado h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.4rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 8px; }
+.subtitulo { color: #666; margin-bottom: 24px; }
+.filtros { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.filtros label { font-size: 0.85rem; display: flex; flex-direction: column; gap: 4px; font-weight: bold; color: #444; }
+.filtros input, .filtros select { padding: 8px 10px; border: 1px solid #ccc; font-size: 0.9rem; font-family: inherit; min-width: 220px; font-weight: normal; }
 
-.logo {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.4rem;
-    font-weight: normal;
-    letter-spacing: 0.08em;
-    color: #e63946;
-    line-height: 1;
-}
-
-nav {
-    display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    color: #ccc;
-    font-size: 0.9rem;
-    transition: color 0.15s;
-}
-
-nav a:hover,
-nav a.active {
-    color: #fff;
-}
-
-/* Bloque de la derecha de la cabecera */
-.sesion {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-/* Selector de idiomas */
-.idiomas {
-    display: flex;
-    gap: 4px;
-}
-
-.btn-idioma {
-    background: transparent;
-    color: #aaa;
-    border: 1px solid #444;
-    padding: 3px 8px;
-    font-size: 0.75rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-idioma.activo,
-.btn-idioma:hover {
-    background: #e63946;
-    color: #fff;
-    border-color: #e63946;
-}
-
-/* Icono del carrito siempre visible */
-.icono-carrito {
-    position: relative;
-    font-size: 1.3rem;
-    color: #fff;
-    text-decoration: none;
-    padding: 4px 6px;
-}
-
-.icono-carrito .contador {
-    position: absolute;
-    top: -2px;
-    right: -6px;
-    background: #e63946;
-    color: #fff;
-    border-radius: 10px;
-    font-size: 0.7rem;
-    padding: 1px 6px;
-    font-weight: bold;
-    min-width: 18px;
-    text-align: center;
-}
-
-/* Zona del usuario (login o saludo) */
-.zona-usuario {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.icono-login {
-    font-size: 1.3rem;
-    color: #fff;
-}
-
-.saludo {
-    font-size: 0.85rem;
-    color: #ccc;
-}
-
-.btn-logout {
-    background: #e63946;
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-logout:hover {
-    background: #c5303c;
-}
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero {
-    text-align: center;
-    padding: 80px 32px;
-    background: #333;
-    color: #fff;
-}
-
-.hero h1 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 3.2rem;
-    font-weight: normal;
-    letter-spacing: 0.04em;
-    margin-bottom: 12px;
-}
-
-.hero p {
-    margin-bottom: 24px;
-    color: #ccc;
-}
-
-/* ============================================================
-   BOTONES
-   ============================================================ */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background: #e63946;
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.9rem;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}
-
-.btn:hover {
-    background: #c5303c;
-}
-
-.btn:disabled {
-    background: #888;
-    cursor: not-allowed;
-}
-
-.btn-pequeno {
-    padding: 8px 14px;
-    font-size: 0.8rem;
-}
-
-/* ============================================================
-   SECCIÓN DE ENTRENAMIENTOS (HOME Y LISTADO)
-   ============================================================ */
-.entrenamientos,
-.listado {
-    padding: 48px 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.entrenamientos h2,
-.listado h1 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.4rem;
-    font-weight: normal;
-    letter-spacing: 0.03em;
-    margin-bottom: 8px;
-}
-
-.subtitulo {
-    color: #666;
-    margin-bottom: 24px;
-}
-
-/* Filtros del listado */
-.filtros {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-}
-
-.filtros label {
-    font-size: 0.85rem;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-weight: bold;
-    color: #444;
-}
-
-.filtros input,
-.filtros select {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    font-size: 0.9rem;
-    font-family: inherit;
-    min-width: 220px;
-    font-weight: normal;
-}
-
-/* ============================================================
-   GRID DE TARJETAS
-   ============================================================ */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #fff;
-    border: 1px solid #ddd;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.15s, transform 0.15s;
-}
-
-.card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-}
-
-.card-img {
-    height: 150px;
-}
-
-.img-fuerza,
-.img-cardio,
-.img-flex,
-.img-hiit,
-.img-funcional,
-.img-yoga {
-    background-size: cover;
-    background-position: center;
-}
-
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.card { background: #fff; border: 1px solid #ddd; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.15s, transform 0.15s; }
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.card-img { height: 150px; }
+.img-fuerza, .img-cardio, .img-flex, .img-hiit, .img-funcional, .img-yoga { background-size: cover; background-position: center; }
 .img-fuerza    { background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=300&fit=crop&auto=format'); }
 .img-cardio    { background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop&auto=format'); }
 .img-flex      { background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&h=300&fit=crop&auto=format'); }
 .img-hiit      { background-image: url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=500&h=300&fit=crop&auto=format'); }
 .img-funcional { background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=300&fit=crop&auto=format'); }
 .img-yoga      { background-image: url('https://images.unsplash.com/photo-1544033527-b192daee1f5b?w=500&h=300&fit=crop&auto=format'); }
+.card-body { padding: 16px; display: flex; flex-direction: column; flex: 1; }
+.badge { display: inline-block; font-size: 0.75rem; font-weight: bold; padding: 3px 10px; background: #eee; color: #444; margin-bottom: 8px; align-self: flex-start; }
+.card-body h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.card-body p { font-size: 0.85rem; color: #555; margin-bottom: 10px; }
+.precio { display: block; font-size: 1.05rem; font-weight: bold; color: #e63946; margin-bottom: 12px; }
+.acciones { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; }
+.enlace-detalle { color: #e63946; font-size: 0.85rem; font-weight: bold; }
+.enlace-detalle:hover { text-decoration: underline; }
+.aviso-vacio { color: #888; font-style: italic; grid-column: 1 / -1; text-align: center; padding: 40px 0; }
+
+.producto { padding: 48px 32px; max-width: 1000px; margin: 0 auto; }
+.volver { display: inline-block; margin-bottom: 20px; color: #e63946; font-size: 0.9rem; font-weight: bold; }
+.producto-layout { display: flex; gap: 32px; background: #fff; border: 1px solid #ddd; padding: 24px; }
+.producto-img { width: 360px; height: 360px; flex-shrink: 0; }
+.producto-info { flex: 1; }
+.producto-info h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin: 8px 0 12px; }
+.producto-info p { color: #555; margin-bottom: 16px; }
+.precio-grande { font-size: 1.6rem; color: #e63946; font-weight: bold; margin: 16px 0 !important; }
+.lista-detalles { list-style: none; padding: 0; margin: 16px 0 24px; border-top: 1px solid #eee; }
+.lista-detalles li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #444; }
+
+.sobre { padding: 48px 32px; max-width: 800px; margin: 0 auto; }
+.sobre h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 24px; }
+.bloque-sobre { background: #fff; border: 1px solid #ddd; padding: 20px; margin-bottom: 16px; }
+.bloque-sobre h2 { font-size: 1.1rem; margin-bottom: 8px; color: #e63946; }
+.bloque-sobre p { color: #555; font-size: 0.95rem; }
+.valores { margin-top: 24px; padding-left: 20px; color: #444; }
+.valores li { margin-bottom: 8px; font-size: 0.95rem; }
+
+.contacto { padding: 80px 32px; max-width: 700px; margin: 0 auto; text-align: center; }
+.contacto h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 16px; }
+.contacto p { color: #555; margin-bottom: 12px; }
+.contacto a { color: #e63946; font-weight: bold; }
+
+.carrito { padding: 48px 32px; max-width: 800px; margin: 0 auto; }
+.carrito h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.6rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 8px; }
+.lista-carrito { margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
+.fila-carrito { display: flex; align-items: center; background: #fff; border: 1px solid #ddd; padding: 12px; gap: 16px; }
+.fila-img { width: 80px; height: 80px; flex-shrink: 0; }
+.fila-datos { flex: 1; }
+.fila-datos h3 { font-size: 1rem; margin-bottom: 4px; }
+.fila-datos .precio { margin-top: 6px; font-size: 0.95rem; }
+.btn-eliminar { background: #fff; border: 1px solid #e63946; color: #e63946; padding: 8px 14px; font-size: 0.8rem; cursor: pointer; font-weight: bold; }
+.btn-eliminar:hover { background: #e63946; color: #fff; }
+.total { text-align: right; font-size: 1.2rem; font-weight: bold; margin: 16px 0 24px; color: #222; }
+
+.login { max-width: 420px; margin: 48px auto; padding: 32px; background: #fff; border: 1px solid #ddd; border-radius: 0.5em; }
+.login h1 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.2rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 20px; text-align: center; }
+.login .svgContainer { position: relative; width: 200px; height: 200px; margin: 0 auto 24px; border-radius: 50%; background: none; border: solid 2.5px #3A5E77; overflow: hidden; pointer-events: none; }
+.login .svgContainer > div { position: relative; width: 100%; height: 0; overflow: hidden; padding-bottom: 100%; }
+.login .svgContainer .mySVG { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
+.campo { margin-bottom: 16px; }
+.campo label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 6px; }
+.campo input { width: 100%; padding: 8px 10px; border: 1px solid #ccc; font-size: 0.9rem; font-family: inherit; }
+.campo-password { display: flex; align-items: stretch; gap: 6px; }
+.btn-ojo { background: #fff; border: 1px solid #ccc; padding: 0 12px; cursor: pointer; font-size: 1rem; }
+.btn-ojo:hover { background: #f0f0f0; }
+.ayuda { display: block; margin-top: 6px; font-size: 0.75rem; color: #888; }
+.error { color: #a94442; font-size: 0.85rem; min-height: 1.2em; margin-bottom: 12px; }
+.login .btn { width: 100%; text-align: center; }
+
+footer { background: #222; color: #888; padding: 24px 32px; margin-top: 48px; }
+.footer-contenido { max-width: 1200px; margin: 0 auto; text-align: center; font-size: 0.8rem; line-height: 1.8; }
+.footer-contenido strong { color: #fff; }
+
+.galeria-slider { background: #1e1e1e; padding: 56px 0 48px; text-align: center; overflow: hidden; }
+.galeria-slider h2 { font-family: 'SongOfValentine', Arial, sans-serif; font-size: 2.4rem; font-weight: normal; letter-spacing: 0.04em; color: #fff; margin-bottom: 6px; }
+.galeria-slider .slider-subtitulo { color: #888; font-size: 0.95rem; margin-bottom: 32px; }
+.slider-wrapper { position: relative; display: flex; align-items: center; }
+.slider-track { display: flex; height: 320px; overflow-x: scroll; overflow-y: hidden; scroll-behavior: smooth; flex: 1; padding: 0 12px; }
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-track .slide { flex-shrink: 0; position: relative; }
+.slider-track .slide img { height: 100%; width: 260px; margin: 0 8px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; display: block; }
+.slider-track .slide img:hover { transform: scale(1.04); box-shadow: 0 8px 28px rgba(0,0,0,0.5); }
+.slider-track .slide img.zoomed { position: fixed; width: min(520px, 90vw); height: auto; max-height: 85vh; left: 50%; top: 50%; transform: translate(-50%,-50%) !important; z-index: 1001; border-radius: 12px; box-shadow: 0 24px 60px rgba(0,0,0,0.7); cursor: zoom-out; }
+.slider-btn { flex-shrink: 0; background: #e63946; color: #fff; border: none; width: 44px; height: 44px; font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.15s; border-radius: 50%; margin: 0 10px; }
+.slider-btn:hover { background: #c5303c; }
+.slider-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.72); z-index: 1000; cursor: pointer; }
+.slider-overlay.active { display: block; }
 
-.card-body {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.badge {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 3px 10px;
-    background: #eee;
-    color: #444;
-    margin-bottom: 8px;
-    align-self: flex-start;
-}
-
-.card-body h3 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-}
-
-.card-body p {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.precio {
-    display: block;
-    font-size: 1.05rem;
-    font-weight: bold;
-    color: #e63946;
-    margin-bottom: 12px;
-}
-
-.acciones {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    margin-top: auto;
-}
-
-.enlace-detalle {
-    color: #e63946;
-    font-size: 0.85rem;
-    font-weight: bold;
-}
-
-.enlace-detalle:hover {
-    text-decoration: underline;
-}
-
-.aviso-vacio {
-    color: #888;
-    font-style: italic;
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 40px 0;
-}
-
-/* ============================================================
-   PÁGINA DE PRODUCTO (DETALLE)
-   ============================================================ */
-.producto {
-    padding: 48px 32px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.volver {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #e63946;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-.producto-layout {
-    display: flex;
-    gap: 32px;
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 24px;
-}
-
-.producto-img {
-    width: 360px;
-    height: 360px;
-    flex-shrink: 0;
-}
-
-.producto-info {
-    flex: 1;
-}
-
-.producto-info h1 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.6rem;
-    font-weight: normal;
-    letter-spacing: 0.03em;
-    margin: 8px 0 12px;
-}
-
-.producto-info p {
-    color: #555;
-    margin-bottom: 16px;
-}
-
-.precio-grande {
-    font-size: 1.6rem;
-    color: #e63946;
-    font-weight: bold;
-    margin: 16px 0 !important;
-}
-
-.lista-detalles {
-    list-style: none;
-    padding: 0;
-    margin: 16px 0 24px;
-    border-top: 1px solid #eee;
-}
-
-.lista-detalles li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 0.9rem;
-    color: #444;
-}
-
-/* ============================================================
-   SOBRE NOSOTROS
-   ============================================================ */
-.sobre {
-    padding: 48px 32px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.sobre h1 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.6rem;
-    font-weight: normal;
-    letter-spacing: 0.03em;
-    margin-bottom: 24px;
-}
-
-.bloque-sobre {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 16px;
-}
-
-.bloque-sobre h2 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #e63946;
-}
-
-.bloque-sobre p {
-    color: #555;
-    font-size: 0.95rem;
-}
-
-.valores {
-    margin-top: 24px;
-    padding-left: 20px;
-    color: #444;
-}
-
-.valores li {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-}
-
-/* ============================================================
-   CONTACTO
-   ============================================================ */
-.contacto {
-    padding: 80px 32px;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contacto h1 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.6rem;
-    font-weight: normal;
-    letter-spacing: 0.03em;
-    margin-bottom: 16px;
-}
-
-.contacto p {
-    color: #555;
-    margin-bottom: 12px;
-}
-
-.contacto a {
-    color: #e63946;
-    font-weight: bold;
-}
-
-/* ============================================================
-   CARRITO
-   ============================================================ */
-.carrito {
-    padding: 48px 32px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.carrito h1 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.6rem;
-    font-weight: normal;
-    letter-spacing: 0.03em;
-    margin-bottom: 8px;
-}
-
-.lista-carrito {
-    margin: 24px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.fila-carrito {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 12px;
-    gap: 16px;
-}
-
-.fila-img {
-    width: 80px;
-    height: 80px;
-    flex-shrink: 0;
-}
-
-.fila-datos {
-    flex: 1;
-}
-
-.fila-datos h3 {
-    font-size: 1rem;
-    margin-bottom: 4px;
-}
-
-.fila-datos .precio {
-    margin-top: 6px;
-    font-size: 0.95rem;
-}
-
-.btn-eliminar {
-    background: #fff;
-    border: 1px solid #e63946;
-    color: #e63946;
-    padding: 8px 14px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-eliminar:hover {
-    background: #e63946;
-    color: #fff;
-}
-
-.total {
-    text-align: right;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 16px 0 24px;
-    color: #222;
-}
-
-/* ============================================================
-   LOGIN
-   ============================================================ */
-.login {
-    max-width: 420px;
-    margin: 48px auto;
-    padding: 32px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 0.5em;
-}
-
-.login h1 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.2rem;
-    font-weight: normal;
-    letter-spacing: 0.03em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Avatar yeti animado */
-.login .svgContainer {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 24px;
-    border-radius: 50%;
-    background: none;
-    border: solid 2.5px #3A5E77;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.login .svgContainer > div {
-    position: relative;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    padding-bottom: 100%;
-}
-
-.login .svgContainer .mySVG {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.campo {
-    margin-bottom: 16px;
-}
-
-.campo label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-.campo input {
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    font-size: 0.9rem;
-    font-family: inherit;
-}
-
-.campo-password {
-    display: flex;
-    align-items: stretch;
-    gap: 6px;
-}
-
-.btn-ojo {
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 0 12px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.btn-ojo:hover {
-    background: #f0f0f0;
-}
-
-.ayuda {
-    display: block;
-    margin-top: 6px;
-    font-size: 0.75rem;
-    color: #888;
-}
-
-.error {
-    color: #a94442;
-    font-size: 0.85rem;
-    min-height: 1.2em;
-    margin-bottom: 12px;
-}
-
-.login .btn {
-    width: 100%;
-    text-align: center;
-}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-    background: #222;
-    color: #888;
-    padding: 24px 32px;
-    margin-top: 48px;
-}
-
-.footer-contenido {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 0.8rem;
-    line-height: 1.8;
-}
-
-.footer-contenido strong {
-    color: #fff;
-}
-
-/* ============================================================
-   GALERÍA SLIDER (index.html)
-   ============================================================ */
-.galeria-slider {
-    background: #1e1e1e;
-    padding: 56px 0 48px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.galeria-slider h2 {
-    font-family: 'SongOfValentine', Arial, sans-serif;
-    font-size: 2.4rem;
-    font-weight: normal;
-    letter-spacing: 0.04em;
-    color: #fff;
-    margin-bottom: 6px;
-}
-
-.galeria-slider .slider-subtitulo {
-    color: #888;
-    font-size: 0.95rem;
-    margin-bottom: 32px;
-}
-
-.slider-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0;
-}
-
-.slider-track {
-    display: flex;
-    height: 320px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    flex: 1;
-    padding: 0 12px;
-    gap: 0;
-}
-
-.slider-track::-webkit-scrollbar {
-    display: none;
-}
-
-.slider-track .slide {
-    flex-shrink: 0;
-    position: relative;
-}
-
-.slider-track .slide img {
-    height: 100%;
-    width: 260px;
-    margin: 0 8px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    display: block;
-}
-
-.slider-track .slide img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-}
-
-.slider-track .slide img.zoomed {
-    position: fixed;
-    width: min(520px, 90vw);
-    height: auto;
-    max-height: 85vh;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) !important;
-    z-index: 1001;
-    border-radius: 12px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
-    cursor: zoom-out;
-}
-
-.slider-btn {
-    flex-shrink: 0;
-    background: #e63946;
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: background 0.15s;
-    border-radius: 50%;
-    margin: 0 10px;
-}
-
-.slider-btn:hover {
-    background: #c5303c;
-}
-
-.slider-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.72);
-    z-index: 1000;
-    cursor: pointer;
-}
-
-.slider-overlay.active {
-    display: block;
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 12px;
-        padding: 14px 16px;
-    }
-
-    nav {
-        justify-content: center;
-    }
-
-    .sesion {
-        justify-content: center;
-    }
-
-    .producto-layout {
-        flex-direction: column;
-    }
-
-    .producto-img {
-        width: 100%;
-        height: 220px;
-    }
-
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .entrenamientos,
-    .listado,
-    .producto,
-    .sobre,
-    .carrito,
-    .contacto {
-        padding: 32px 16px;
-    }
-
-    .filtros input,
-    .filtros select {
-        min-width: 0;
-        width: 100%;
-    }
-
-    .filtros label {
-        flex: 1 1 100%;
-    }
-
-    .fila-carrito {
-        flex-wrap: wrap;
-    }
-
-    .fila-img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .login {
-        margin: 24px 16px;
-        padding: 20px;
-    }
-
-    .galeria-slider h2 {
-        font-size: 1.9rem;
-    }
-
-    .slider-track {
-        height: 240px;
-    }
-
-    .slider-track .slide img {
-        width: 200px;
-    }
-
-    .slider-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-        margin: 0 6px;
-    }
+    header { flex-direction: column; gap: 12px; padding: 14px 16px; }
+    nav { justify-content: center; }
+    .sesion { justify-content: center; }
+    .producto-layout { flex-direction: column; }
+    .producto-img { width: 100%; height: 220px; }
+    .hero { padding: 60px 20px; }
+    .entrenamientos, .listado, .producto, .sobre, .carrito, .contacto { padding: 32px 16px; }
+    .filtros input, .filtros select { min-width: 0; width: 100%; }
+    .filtros label { flex: 1 1 100%; }
+    .fila-carrito { flex-wrap: wrap; }
+    .fila-img { width: 60px; height: 60px; }
+    .login { margin: 24px 16px; padding: 20px; }
+    .galeria-slider h2 { font-size: 1.9rem; }
+    .slider-track { height: 240px; }
+    .slider-track .slide img { width: 200px; }
+    .slider-btn { width: 36px; height: 36px; font-size: 1rem; margin: 0 6px; }
 }
-
 @media (max-width: 480px) {
-    .acciones {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .acciones .btn {
-        width: 100%;
-    }
+    .acciones { flex-direction: column; align-items: stretch; }
+    .acciones .btn { width: 100%; }
 }
