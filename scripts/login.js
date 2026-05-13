@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inicializarFormularioLogin();
 });
 
-// Conecta los eventos del formulario y los inputs.
+// Conecta los eventos del formulario y los inputs
 function inicializarFormularioLogin() {
     var formulario = document.getElementById("login-form");
     var inputUsuario = document.getElementById("usuario");
@@ -14,12 +14,12 @@ function inicializarFormularioLogin() {
         return;
     }
 
-    // Validación en vivo mientras el usuario escribe la contraseña.
+    // Validación en vivo mientras el usuario escribe la contraseña
     inputPassword.addEventListener("input", function () {
         mensajeError.textContent = validarPassword(inputPassword.value);
     });
 
-    // Botón para mostrar u ocultar la contraseña.
+    // Botón para mostrar u ocultar la contraseña
     if (botonOjo !== null) {
         botonOjo.addEventListener("click", function () {
             if (inputPassword.type === "password") {
@@ -32,7 +32,7 @@ function inicializarFormularioLogin() {
         });
     }
 
-    // Validación final al enviar el formulario.
+    // Validación final al enviar el formulario
     formulario.addEventListener("submit", function (evento) {
         evento.preventDefault();
 
@@ -50,15 +50,13 @@ function inicializarFormularioLogin() {
             return;
         }
 
-        // Guardamos el nombre en sessionStorage y volvemos al inicio.
+        // Guardamos el nombre en sessionStorage y volvemos al inicio
         iniciarSesionUsuario(nombre);
         window.location.href = "index.html";
     });
 }
 
-// Comprueba que la contraseña cumpla las normas pedidas:
-// 6-12 caracteres, una mayúscula, una minúscula y un número.
-// Devuelve un string vacío si todo es correcto.
+// Valida la contraseña (6-12 chars, mayúscula, minúscula, número); devuelve "" si es correcta
 function validarPassword(clave) {
     if (clave.length < 6 || clave.length > 12) {
         return "La contraseña debe tener entre 6 y 12 caracteres.";
