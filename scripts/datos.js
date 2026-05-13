@@ -61,8 +61,7 @@ var productos = [
     }
 ];
 
-// Devuelve el producto que corresponde al id indicado.
-// Si no existe, devuelve null.
+// Devuelve el producto por id, o null si no existe
 function buscarProductoPorId(id) {
     for (let i = 0; i < productos.length; i++) {
         if (productos[i].id === id) {
